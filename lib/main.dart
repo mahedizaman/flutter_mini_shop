@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 import 'pages/home_page.dart';
 
 void main() {
@@ -12,7 +14,17 @@ class MyShop extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(), 
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
+        textTheme: GoogleFonts.latoTextTheme(),
+        inputDecorationTheme: InputDecorationTheme(
+          hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        ),
+        useMaterial3: true,
+      ),
+      title: 'Shopping app',
+
+      home: const HomePage(),
     );
   }
 }

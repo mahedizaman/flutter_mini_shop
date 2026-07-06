@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_shop/widgets/search_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,30 +13,45 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 252, 244),
-      appBar: AppBar(
-        backgroundColor: Colors.amber.shade50,
-        title: Text.rich(
-          TextSpan(
-            text: 'Shoes, \n',
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 24,
-              fontWeight: FontWeight(600),
-            ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: SafeArea(
+          child: Column(
             children: [
-              TextSpan(
-                text: 'Collection',
-                style: const TextStyle(
-                  fontWeight: FontWeight(600),
-                  color: Colors.amber,
-                  fontSize: 28,
-                ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text.rich(
+                      TextSpan(
+                        text: 'Shoes, \n',
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+
+                        children: [
+                          TextSpan(
+                            text: 'Collection',
+                            style: const TextStyle(
+                              color: Colors.amber,
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8.0),
+                  Expanded(child: SearchBarPage()),
+                ],
               ),
             ],
           ),
         ),
       ),
-      body: SafeArea(child: Column(children: [])),
     );
   }
 }
