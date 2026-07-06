@@ -14,14 +14,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 252, 244),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        padding: const EdgeInsets.symmetric(horizontal: 0.0),
         child: SafeArea(
           child: Column(
             children: [
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text.rich(
                       TextSpan(
                         text: 'Shoes, \n',
@@ -44,7 +44,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8.0),
                   Expanded(child: SearchBarPage()),
                 ],
               ),

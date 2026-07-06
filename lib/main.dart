@@ -18,8 +18,15 @@ class MyShop extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
         textTheme: GoogleFonts.latoTextTheme(),
         inputDecorationTheme: InputDecorationTheme(
-          hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+            color: Colors.grey,
+          ),
+          prefixIconColor:( Colors.grey),
+          
         ),
+
         useMaterial3: true,
       ),
       title: 'Shopping app',
