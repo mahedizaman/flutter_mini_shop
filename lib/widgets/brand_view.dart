@@ -11,7 +11,7 @@ class _BrandViewPageState extends State<BrandViewPage> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final List<String> brands = ['All', 'Adidas', 'Nike', 'Bata'];
+    final List<String> brands = ['All', 'Adidas', 'Nike', 'Bata', 'Jordan'];
 
     return SizedBox(
       height: 120,
@@ -23,7 +23,7 @@ class _BrandViewPageState extends State<BrandViewPage> {
 
           final isSelected = selectedIndex == index;
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: GestureDetector(
               onTap: () {
                 setState(() {
@@ -31,14 +31,14 @@ class _BrandViewPageState extends State<BrandViewPage> {
                 });
               },
               child: Chip(
-                padding: EdgeInsets.all(12),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 label: Text(
                   brand,
                   style: TextStyle(
                     color: isSelected ? Colors.white : Colors.black,
                   ),
                 ),
-                backgroundColor: isSelected ? Colors.amber : Colors.white,
+                backgroundColor: isSelected ? Colors.amberAccent : Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
                   side: BorderSide(
