@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_shop/widgets/brand_view.dart';
 import 'package:mini_shop/widgets/search_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,6 +48,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(child: SearchBarPage()),
                 ],
               ),
+              BrandViewPage(),
             ],
           ),
         ),
