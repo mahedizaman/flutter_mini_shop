@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini_shop/product_details.dart';
 import 'package:mini_shop/widgets/brand_view.dart';
 import 'package:mini_shop/widgets/product_card.dart';
+import 'package:mini_shop/widgets/product_details.dart';
 import 'package:mini_shop/widgets/search_bar.dart';
 
 class HomePage extends StatefulWidget {

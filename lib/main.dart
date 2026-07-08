@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'pages/home_page.dart';
+import 'package:mini_shop/widgets/product_details.dart';
 
 void main() {
   runApp(const MyShop());
@@ -23,15 +22,14 @@ class MyShop extends StatelessWidget {
             fontSize: 16,
             color: Colors.grey,
           ),
-          prefixIconColor:( Colors.grey),
-          
+          prefixIconColor: (Colors.grey),
         ),
 
         useMaterial3: true,
       ),
       title: 'Shopping app',
 
-      home: const HomePage(),
+      home: const ProductDetailsPage(),
     );
   }
 }
