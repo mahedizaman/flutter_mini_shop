@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mini_shop/product_details.dart';
-import 'package:mini_shop/widgets/product_details.dart';
+import 'package:mini_shop/pages/home_page.dart';
 
 void main() {
   runApp(const MyShop());
@@ -30,7 +29,7 @@ class MyShop extends StatelessWidget {
       ),
       title: 'Shopping app',
 
-      home: ProductDetailsPage(product: products[0]),
+      home: HomePage(),
     );
   }
 }

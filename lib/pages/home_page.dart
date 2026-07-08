@@ -58,11 +58,22 @@ class _HomePageState extends State<HomePage> {
                   itemCount: products.length,
                   itemBuilder: (context, index) {
                     final product = products[index];
-                    return ProductCardPage(
-                      title: product['title'] as String,
-                      price: product['price'] as double,
-                      image: product['imageUrl'] as String,
-                      isEven: index.isEven,
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return ProductDetailsPage(product: product);
+                            },
+                          ),
+                        );
+                      },
+                      child: ProductCardPage(
+                        title: product['title'] as String,
+                        price: product['price'] as double,
+                        image: product['imageUrl'] as String,
+                        isEven: index.isEven,
+                      ),
                     );
                   },
                 ),
