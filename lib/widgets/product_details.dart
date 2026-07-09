@@ -83,6 +83,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   final selected = selectedSize == size;
 
                   return ChoiceChip(
+                    selectedColor: Colors.amberAccent,
                     label: Text(size.toString()),
                     selected: selected,
                     onSelected: (_) {
@@ -114,6 +115,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 width: double.infinity,
                 height: 55,
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.amber,
+                    foregroundColor: Colors.white,
+                  ),
                   onPressed: () {},
                   child: const Text(
                     "Add to Cart",
