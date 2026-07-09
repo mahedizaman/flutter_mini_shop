@@ -13,8 +13,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String selectedBrand = 'All';
   @override
   Widget build(BuildContext context) {
+    final filteredProducts = selectedBrand == 'All'
+        ? products
+        : products.where((product) {
+            return product['company'] == selectedBrand;
+          }).toList();
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 252, 244),
       body: Padding(
@@ -51,13 +57,19 @@ class _HomePageState extends State<HomePage> {
                   Expanded(child: SearchBarPage()),
                 ],
               ),
-              BrandViewPage(),
+              BrandViewPage(
+                onBrandSelected: (brand) {
+                  setState(() {
+                    selectedBrand = brand;
+                  });
+                },
+              ),
 
               Expanded(
                 child: ListView.builder(
-                  itemCount: products.length,
+                  itemCount: filteredProducts.length,
                   itemBuilder: (context, index) {
-                    final product = products[index];
+                    final product = filteredProducts[index];
                     return GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(

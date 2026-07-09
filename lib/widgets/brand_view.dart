@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mini_shop/product_details.dart';
 
 class BrandViewPage extends StatefulWidget {
-  const BrandViewPage({super.key});
+  final Function(String) onBrandSelected;
+
+  const BrandViewPage({super.key, required this.onBrandSelected});
 
   @override
   State<BrandViewPage> createState() => _BrandViewPageState();
@@ -11,7 +14,13 @@ class _BrandViewPageState extends State<BrandViewPage> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final List<String> brands = ['All', 'Adidas', 'Nike', 'Bata', 'Jordan'];
+    final List<String> brands = [
+      'All',
+      ...products
+          .map((product) => product['company'] as String)
+          .toSet()
+          .toList(),
+    ];
 
     return SizedBox(
       height: 120,
@@ -29,6 +38,7 @@ class _BrandViewPageState extends State<BrandViewPage> {
                 setState(() {
                   selectedIndex = index;
                 });
+                widget.onBrandSelected(brands[index]);
               },
               child: Chip(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
